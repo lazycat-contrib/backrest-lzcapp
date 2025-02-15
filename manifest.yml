@@ -1,0 +1,33 @@
+lzc-sdk-version: "0.1"
+name: Backrest
+package: cloud.lazycat.appbackrest
+version: 1.7.1
+description: 基于restic的Web备份工具
+homepage: https://github.com/garethgeorge/backrest
+author: garethgeorge
+application:
+  subdomain: backrest
+  background_task: true
+  multi_instance: false
+  gpu_accel: false
+  kvm_accel: false
+  usb_accel: false
+  routes:
+    - /=http://backrest.cloud.lazycat.appbackrest.lzcapp:9898/
+services:
+  backrest:
+    image: registry.lazycat.cloud/czyt/garethgeorge/backrest:5e4ee5f30d7db939
+    environment:
+      - BACKREST_DATA=/data
+      - BACKREST_CONFIG=/config/config.json
+      - XDG_CACHE_HOME=/cache
+      - TZ=Asia/Shanghai
+    binds:
+      - /lzcapp/var/data:/data
+      - /lzcapp/var/config:/config
+      - /lzcapp/cache/backrest:/cache
+      - /lzcapp/var/userdata:/userdata
+      - /lzcapp/var/repos:/repos
+unsupported_platforms:
+  - ios
+  - android

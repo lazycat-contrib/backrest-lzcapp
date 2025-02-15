@@ -1,0 +1,43 @@
+{
+  "name": "Backrest",
+  "package": "backrest",
+  "description": "基于restic的Web备份工具",
+  "homepage": "https://github.com/garethgeorge/backrest",
+  "author": "garethgeorge",
+  "app_features": [
+    "background_task"
+  ],
+  "subdomain": "backrest",
+  "version": "1.7.1",
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [
+    "ios",
+    "android"
+  ],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "backrest_9898_9898": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_garethgeorge_backrest_latest": {
+    "originalImage": "garethgeorge/backrest:latest",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/garethgeorge/backrest:5e4ee5f30d7db939",
+    "timestamp": "2025-02-15T03:50:40.372Z"
+  },
+  "backrest_volume_/data_action": "emptyDir",
+  "backrest_volume_/data_location": "app_data",
+  "backrest_volume_/config_action": "emptyDir",
+  "backrest_volume_/config_location": "app_data",
+  "backrest_volume_/cache_action": "emptyDir",
+  "backrest_volume_/cache_location": "app_data",
+  "backrest_volume_/userdata_action": "emptyDir",
+  "backrest_volume_/userdata_location": "app_data",
+  "backrest_volume_/repos_action": "emptyDir",
+  "backrest_volume_/repos_location": "app_data"
+}
