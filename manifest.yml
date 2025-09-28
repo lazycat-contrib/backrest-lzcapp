@@ -1,7 +1,7 @@
 lzc-sdk-version: "0.1"
 name: Backrest
 package: cloud.lazycat.appbackrest
-version: 1.7.1
+version: 1.9.2
 description: 基于restic的Web备份工具
 homepage: https://github.com/garethgeorge/backrest
 author: garethgeorge
@@ -13,10 +13,11 @@ application:
   kvm_accel: false
   usb_accel: false
   routes:
-    - /=http://backrest.cloud.lazycat.appbackrest.lzcapp:9898/
+    - /=http://backrest:9898/
 services:
   backrest:
-    image: registry.lazycat.cloud/czyt/garethgeorge/backrest:5e4ee5f30d7db939
+    # garethgeorge/backrest:v1.9.2
+    image: registry.lazycat.cloud/czyt/garethgeorge/backrest:c3df2d7ea2c84b87
     environment:
       - BACKREST_DATA=/data
       - BACKREST_CONFIG=/config/config.json
@@ -27,7 +28,16 @@ services:
       - /lzcapp/var/config:/config
       - /lzcapp/cache/backrest:/cache
       - /lzcapp/var/userdata:/userdata
+      - /lzcapp/var/rclone:/root/.config/rclone
       - /lzcapp/var/repos:/repos
 unsupported_platforms:
   - ios
   - android
+
+locales:
+  zh:
+    name: "Backrest"
+    description: "基于restic的Web备份工具"
+  en:
+    name: "Backrest"
+    description: "Backrest is a web UI and orchestrator for restic backup."
