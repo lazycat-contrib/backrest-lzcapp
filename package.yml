@@ -1,0 +1,18 @@
+package: cloud.lazycat.appbackrest
+version: 1.9.2
+name: Backrest
+description: "基于restic的Web备份工具"
+homepage: https://github.com/garethgeorge/backrest
+author: garethgeorge
+min_os_version: 1.5.0
+unsupported_platforms:
+  - ios
+  - android
+
+locales:
+  zh:
+    name: "Backrest"
+    description: "基于restic的Web备份工具"
+  en:
+    name: "Backrest"
+    description: "Backrest is a web UI and orchestrator for restic backup."
