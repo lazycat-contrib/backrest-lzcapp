@@ -1,5 +1,5 @@
 package: cloud.lazycat.appbackrest
-version: 1.9.2
+version: 1.14.1
 name: Backrest
 description: "基于restic的Web备份工具"
 homepage: https://github.com/garethgeorge/backrest
@@ -8,7 +8,6 @@ min_os_version: 1.5.0
 unsupported_platforms:
   - ios
   - android
-
 locales:
   zh:
     name: "Backrest"

@@ -8,8 +8,8 @@ application:
       backend: http://backrest:9898/
 services:
   backrest:
-    # upstream: docker.io/garethgeorge/backrest:v1.9.2
-    image: registry.lazycat.cloud/czyt/garethgeorge/backrest:c3df2d7ea2c84b87
+    # upstream: docker.io/garethgeorge/backrest:v1.14.1
+    image: registry.lazycat.cloud/czyt/garethgeorge/backrest:79236b51936456c5
     environment:
       - BACKREST_DATA=/data
       - BACKREST_CONFIG=/config/config.json
