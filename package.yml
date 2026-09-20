@@ -8,6 +8,10 @@ min_os_version: 1.5.0
 unsupported_platforms:
   - ios
   - android
+permissions:
+  required:
+    - net.internet
+    - appvar.other.read
 locales:
   zh:
     name: "Backrest"

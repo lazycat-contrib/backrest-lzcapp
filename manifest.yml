@@ -22,3 +22,4 @@ services:
       - /lzcapp/var/userdata:/userdata
       - /lzcapp/var/rclone:/root/.config/rclone
       - /lzcapp/var/repos:/repos
+      - /lzcsys/run/data/appvar:/appvar
