@@ -1,4 +1,5 @@
 package: cloud.lazycat.appbackrest
+license: GPL-3.0
 version: 1.14.1
 name: Backrest
 description: "基于restic的Web备份工具"
